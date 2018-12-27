@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ballon</title>
+	</head>
+	<body>
+		<p>🎈</p>
+	</body>
+	<style>
+		.ballon {
+			//position: absolute;
+			font-size: 10px;
+		}
+	</style>
+	
+	<script>
+		  // Your code here
+		let ballon = document.querySelector("p");
+		let fontSize = ballon.style.fontSize;
+		window.addEventListener("keydown", event => {
+			//console.log(event.key);
+			//ballon.className = "ballon";
+			if (fontSize > 100) {
+				ballon.textContent = "💥 ";
+				return;
+			}
+			if(event.key == "ArrowDown") {
+				fontSize -= 10;
+				ballon.style.fontSize = fontSize + "px";
+			} else if (event.key == "ArrowUp") {
+				//ballon.style.top = (event.pageY - 10) + "px";
+				fontSize += 10;
+				ballon.style.fontSize = fontSize + "px";
+			} 
+		});
+	</script>
+</html>
